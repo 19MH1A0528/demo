@@ -1,0 +1,29 @@
+import java.util.*;
+import java.util.Map.Entry;
+class HelloWorld {
+    public static void main(String[] args) {
+        int in1[]={70,90,83,58,92};
+        int in2[]={5,4,9,3,5};
+        HashMap<Integer, Integer> hmap= new HashMap<Integer, Integer>();
+        for(int i=0;i<in1.length;i++){
+            hmap.put(in1[i],i);
+        }
+        Arrays.sort(in1);
+        int a1=in1[in1.length-1];
+        int a2=in1[in1.length-2];
+        int i1=0,i2=0;
+        for(Entry<Integer, Integer> entry: hmap.entrySet()) {
+      if(entry.getKey() == a1) {
+        i1=entry.getValue();
+      }
+        }
+        for(Entry<Integer, Integer> entry: hmap.entrySet()) {
+      if(entry.getKey() == a2) {
+        i2=entry.getValue();
+      }
+        }
+        int sum=in2[i1]+in2[i2];
+        
+        System.out.println(sum);
+    }
+}
